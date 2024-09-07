@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StellarYield</title>
+    <link rel="stylesheet" href="game-start.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>StellarYield</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game-start.html">Game</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="game-start">
+        <div class="stats-section">
+            <h2>Seu Saldo</h2>
+            <p>Token: <span id="token-balance">1000 STC</span></p>
+            <p>Rendimento Atual: <span id="current-earnings">0 STC/dia</span></p>
+        </div>
+
+        <div class="animation-section">
+            <div class="space-animation">
+                <div class="ship-animation ship1">
+                    <img src="ship1.png" alt="Ship 1">
+                </div>
+                <div class="ship-animation ship2">
+                    <img src="ship2.png" alt="Ship 2">
+                </div>
+            </div>
+        </div>
+
+        <div class="shop-section">
+            <h2>Space Shop</h2>
+            <div class="category-selector">
+                <button id="show-ships" class="category-btn active">Naves</button>
+                <button id="show-planets" class="category-btn">Planetas</button>
+                <button id="show-miners" class="category-btn">Mineradoras</button>
+            </div>
+            
+            <div id="items-container"></div>
+            
+            <!-- Pop-up para detalhes do item -->
+            <div id="item-popup" class="popup" style="display:none;">
+                <div class="popup-content">
+                    <span id="close-popup" class="close">&times;</span>
+                    <h3 id="popup-item-name"></h3>
+                    <p id="popup-item-cost"></p>
+                    <p id="popup-item-earnings"></p>
+                    <p id="popup-item-days"></p> <!-- Adicionado para mostrar os dias -->
+                    <label for="quantity">Quantidade:</label>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button id="buy-button">Comprar</button>
+                </div>
+            </div>
+            
+            <div id="purchase-summary">
+                <h2>Resumo de Compras</h2>
+                <p id="summary-quantity">Quantidade total: 0</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="game-start.js"></script>
+
+</body>
+</html>

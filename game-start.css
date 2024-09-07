@@ -1,0 +1,273 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+}
+
+body {
+    background: #0a0a2a url('space-bg.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Game Start Section */
+.game-start {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.animation-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin-right: 40px;
+    position: relative;
+    height: 500px;
+}
+
+.space-animation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ship-animation img {
+    position: absolute;
+    width: 150px;
+    transition: transform 2s ease-in-out;
+    border-radius: 50%; /* Bordas arredondadas para as naves */
+}
+
+.ship1 {
+    top: 50px;
+    left: -200px;
+    animation: flyShip1 5s linear infinite;
+}
+
+.ship2 {
+    top: 300px;
+    right: -200px;
+    animation: flyShip2 5s linear infinite;
+}
+
+@keyframes flyShip1 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(800px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes flyShip2 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-800px); }
+}
+
+/* Shop Section */
+.shop-section {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.shop-section h2 {
+    font-size: 28px;
+    font-family: 'Audiowide', sans-serif;
+    margin-bottom: 20px;
+}
+
+.category-selector {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.category-btn {
+    background-color: #00e6e6;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.category-btn:hover {
+    background-color: #00cccc;
+}
+
+.category-btn.active {
+    background-color: #0066cc;
+    color: #ffffff;
+}
+
+#items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os itens */
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.item-card {
+    background-color: #1a1a3d;
+    padding: 20px;
+    border-radius: 10px;
+    width: 150px; /* Largura fixa para todos os cards */
+    height: 200px; /* Altura fixa para todos os cards */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transição suave */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+.item-card:hover {
+    transform: scale(1.05); /* Aumenta levemente o card ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao card */
+}
+
+.item-card img {
+    width: 100px;
+    height: 100px; /* Altura fixa para as imagens */
+    margin-bottom: 10px;
+    border-radius: 50%; /* Bordas arredondadas para os itens */
+}
+
+.item-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.item-card p {
+    font-size: 14px;
+}
+
+/* Pop-up Styles */
+.popup {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+}
+
+.popup-content {
+    background-color: #1a1a3d; /* Cor de fundo do pop-up */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #00e6e6; /* Borda com a cor da paleta */
+    width: 90%; /* Largura responsiva */
+    max-width: 400px; /* Largura máxima */
+    border-radius: 10px;
+    color: #ffffff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+}
+
+.close {
+    color: #00e6e6; /* Cor do botão de fechar */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #00cccc; /* Cor do botão de fechar ao passar o mouse */
+    cursor: pointer;
+}
+
+#quantity {
+    width: 60px; /* Largura do campo de quantidade */
+    margin-top: 10px; /* Margem acima do campo */
+    padding: 5px; /* Padding para o campo */
+    border-radius: 5px; /* Bordas arredondadas */
+    border: 1px solid #00e6e6; /* Borda do campo */
+    background-color: #1a1a3d; /* Fundo do campo */
+    color: #ffffff; /* Cor do texto no campo */
+}
+
+#buy-button {
+    background-color: #00e6e6; /* Cor do botão de compra */
+    padding: 10px 15px; /* Padding do botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: #000; /* Cor do texto */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    margin-top: 10px; /* Margem acima do botão */
+}
+
+#buy-button:hover {
+    background-color: #00cccc; /* Cor do botão ao passar o mouse */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .game-start {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        padding: 20px; /* Ajuste o padding */
+    }
+
+    .animation-section {
+        margin-bottom: 20px;
+        height: 300px; /* Ajusta a altura para telas menores */
+    }
+
+    .shop-section {
+        margin-bottom: 20px; /* Espaçamento entre seções */
+    }
+
+    .category-selector {
+        flex-direction: column; /* Botões em coluna */
+        gap: 10px; /* Espaçamento entre botões */
+    }
+
+    .item-card {
+        width: 100%; /* Itens ocupam 100% da largura em telas pequenas */
+        max-width: 150px; /* Largura máxima dos cards */
+    }
+
+    .popup-content {
+        width: 90%; /* Largura do pop-up em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    .item-card {
+        width: 100%; /* Itens ocupam 100% da largura em telas pequenas */
+    }
+
+    .popup-content {
+        width: 90%; /* Largura do pop-up em telas pequenas */
+    }
+}
